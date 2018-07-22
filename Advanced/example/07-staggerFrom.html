@@ -84,10 +84,10 @@
         
         function animateReset(el) {
             TweenMax.killAll();
-            TweenMax.to(el, 0, {
+            TweenMax.set(el, {
                 opacity: 1,
                 scale: 1,
-            }, 0);
+            });
         }
         
 
