@@ -1,5 +1,4 @@
-# JavaScript ＆ TweenMax 動態特效速成實戰  Yottau_TweenMax_Example
-
+# JavaScript ＆ TweenMax 動態特效速成實戰
 課程網址： <https://www.yottau.com.tw/course/intro/606#intro>
 
 - 課程介紹
