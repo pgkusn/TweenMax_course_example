@@ -24,7 +24,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script>
-		
+		let tl = new TimelineMax();
+        tl.to('.pic1', 1, { 'margin-left': 0, opacity: 1 });
+        tl.to('.pic2', 1, { 'margin-left': 0, opacity: 1 });
+        tl.to('.pic3', 1, { 'margin-top': 0, opacity: 1 });
+        tl.to('.pic4', 1, { scale: 1, opacity: 1 });
+        tl.to('.pic5', 1, { 'width': '240px', opacity: 1 });
+        tl.to('.pic6', 1, { scaleX: 1, opacity: 1 });
+        tl.to('.pic7', 1, { 'margin-left': 0, opacity: 1 });
+        tl.to('.pic8', 1, { 'margin-left': 0, opacity: 1 });
+        tl.to('.pic9', 1, { scaleY: 1, opacity: 1 });
+        tl.to('.pic10', 1, { 'margin-top': 0, opacity: 1 });
+        tl.to('.pic11', 1, { 'width': '240px', opacity: 1 });
+        tl.pause();
+
+        window.addEventListener('scroll', () => {
+            let docHeight = document.body.scrollHeight;
+            let winHeight = window.innerHeight;
+            let scrollTop = window.pageYOffset;
+            let progress = scrollTop / (docHeight - winHeight);
+            tl.progress(progress);
+        });
     </script>
 </body>
 </html>

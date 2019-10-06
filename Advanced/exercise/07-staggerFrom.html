@@ -61,7 +61,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script>
-        
+        let menu = document.querySelector('#menu');
+        document.querySelector('.menuBtn').addEventListener('click', function () {
+            if (this.classList.contains('open')) {
+                this.classList.remove('open');
+                this.classList.add('close');
+                menu.classList.add('open');
+                startAn('.option');
+            }
+            else {
+                this.classList.remove('close');
+                this.classList.add('open');
+                menu.classList.remove('open');
+                endAn('.option');
+            }
+        });
+
+        function startAn(el) {
+            TweenMax.killAll();
+            TweenMax.staggerFrom(el, .3, {
+                scale: .8,
+                opacity: 0
+            }, .3);
+        }
+
+        function endAn(el) {
+            TweenMax.killAll();
+            TweenMax.set(el, {
+                scale: 1,
+                opacity: 1
+            });
+        }
     </script>
 </body>
 </html>

@@ -32,6 +32,7 @@
             height: auto;
             overflow: hidden;
             z-index: 1;
+            /* animation: rotate 60s linear infinite; */
         }
         #box > .bg > img{
             width: 100%;
@@ -50,6 +51,14 @@
             font-size: 20px;
             color: #fff;
         }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,8 +71,11 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script>
-       
-       
+        TweenMax.to('.bg', 60, {
+            rotation: 360,
+            repeat: -1,
+            ease: Power0.easeNone
+        });
     </script>
 </body>
 </html>

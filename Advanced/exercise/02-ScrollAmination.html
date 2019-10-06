@@ -102,7 +102,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/ScrollToPlugin.min.js"></script>
     <script>
-       
+        const speed = 10;
+
+        function mousewheelHandler() {
+            let delta = event.wheelDelta || -event.detail;
+            let windowTop = window.pageYOffset;
+            let finalScroll = windowTop - delta * speed;
+            TweenMax.to(window, 1.2, { scrollTo: finalScroll });
+        }
+
+        window.addEventListener('mousewheel', mousewheelHandler);
+        window.addEventListener('DOMMouseScroll', mousewheelHandler); // for firefox
     </script>
 </body>
 </html>
