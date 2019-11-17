@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09 Transitions</title>
+    <link rel="stylesheet" href="./css/09.css">
+</head>
+<body>
+    <div id="pagetransition">
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square gold"></div>
+        <div class="square grey"></div>
+        <div class="logo"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+    <script>
+        let ww = window.innerWidth;
+        let wh = window.innerHeight;
+        
+        gsap.from('#pagetransition', { duration: 1, rotation: 0 });
+        
+        gsap.from('.logo', {
+            duration: .5,
+            scale: 0,
+            ease: Back.easeOut.config(1.7),
+            delay: 1
+        });
+        
+        gsap.from('.black', {
+            duration: 1,
+            y: -wh/2,
+            ease: Back.easeOut.config(1.7)
+        });
+
+        gsap.from('.white', {
+            duration: 1,
+            x: ww/2,
+            ease: Back.easeOut.config(1.7),
+            onComplete: () => {
+                gsap.to('.white', {
+                    duration: 1,
+                    y: wh / 2,
+                    ease: Back.easeOut.config(1.7)
+                });
+            }
+        });
+
+        gsap.from('.gold', {
+            duration: 1,
+            y: wh/2,
+            ease: Back.easeOut.config(1.7)
+        });
+        
+        gsap.from('.grey', {
+            duration: 1,
+            x: -ww/2,
+            ease: Back.easeOut.config(1.7),
+            onComplete: () => {
+                gsap.to('.grey', {
+                    duration: 1,
+                    y: -wh / 2,
+                    ease: Back.easeOut.config(1.7)
+                });
+            }
+        });
+    </script>
+</body>
+</html>

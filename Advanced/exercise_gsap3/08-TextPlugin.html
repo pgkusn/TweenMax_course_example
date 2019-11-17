@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08 TextPlugin 文字變換</title>
+    <link rel="stylesheet" href="./css/08.css">
+</head>
+<body>
+    <div id="box">
+        <div class="bg"><img src="./images/08/ftt.jpg" alt=""></div>
+        <div class="txt">
+            <h1 id="title">^&*(*&^&^&^%$%&</h1>
+            <h3 id="txt">@#$%$#@#$%^&*($#@#$%^&*()</h3>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+    <script src="TextPlugin.min.js"></script>
+    <script>
+        gsap.to('.bg', {
+            duration: 60,
+            rotation: 360,
+            repeat: -1,
+            ease: Power0.easeNone
+        });
+
+        gsap.to('#title' ,{
+            duration: 5,
+            text: 'YOTTA 你最專業的學習夥伴',
+            ease: Power0.easeNone
+        });
+        
+        gsap.to('#txt', {
+            duration: 3,
+            text: 'https://www.yottau.com.tw/',
+            delay: 2,
+            ease: Power0.easeNone
+        });
+    </script>
+</body>
+</html>
