@@ -26,17 +26,17 @@
     <script>
         let tl = gsap.timeline();
 
-        tl.to('.pic1', 1, { 'margin-left': 0, opacity: 1 });
-        tl.to('.pic2', 1, { 'margin-left': 0, opacity: 1 });
-        tl.to('.pic3', 1, { 'margin-top': 0, opacity: 1 });
-        tl.to('.pic4', 1, { scale: 1, opacity: 1 });
-        tl.to('.pic5', 1, { 'width': '240px', opacity: 1 });
-        tl.to('.pic6', 1, { scaleX: 1, opacity: 1 });
-        tl.to('.pic7', 1, { 'margin-left': 0, opacity: 1 });
-        tl.to('.pic8', 1, { 'margin-left': 0, opacity: 1 });
-        tl.to('.pic9', 1, { scaleY: 1, opacity: 1 });
-        tl.to('.pic10', 1, { 'margin-top': 0, opacity: 1 });
-        tl.to('.pic11', 1, { 'width': '240px', opacity: 1 });
+        tl.to('.pic1', { duration: 1, 'margin-left': 0, opacity: 1 });
+        tl.to('.pic2', { duration: 1, 'margin-left': 0, opacity: 1 });
+        tl.to('.pic3', { duration: 1, 'margin-top': 0, opacity: 1 });
+        tl.to('.pic4', { duration: 1, scale: 1, opacity: 1 });
+        tl.to('.pic5', { duration: 1, 'width': '240px', opacity: 1 });
+        tl.to('.pic6', { duration: 1, scaleX: 1, opacity: 1 });
+        tl.to('.pic7', { duration: 1, 'margin-left': 0, opacity: 1 });
+        tl.to('.pic8', { duration: 1, 'margin-left': 0, opacity: 1 });
+        tl.to('.pic9', { duration: 1, scaleY: 1, opacity: 1 });
+        tl.to('.pic10', { duration: 1, 'margin-top': 0, opacity: 1 });
+        tl.to('.pic11', { duration: 1, 'width': '240px', opacity: 1 });
         tl.pause();
 
         window.addEventListener('scroll', () => {
